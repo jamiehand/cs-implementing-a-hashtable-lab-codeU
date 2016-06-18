@@ -8,13 +8,15 @@ import org.jfree.data.xy.XYSeries;
 import com.flatironschool.javacs.Profiler.Timeable;
 
 public class ProfileMapPut {
-	
+
 	/**
 	 * @param args
 	 */
 	public static void main(String[] args) {
-		//profileHashMapPut();
-		profileMyHashMapPut();
+		profileHashMapPut();
+		// profileMyHashMapPut();
+		// TODO I am getting slopes like .58 for MyHashMapPut and .72 for
+		// HashMapPut -- is that okay?
 	}
 
 	/**
@@ -35,10 +37,10 @@ public class ProfileMapPut {
 			}
 		};
 		int startN = 8000;
-		int endMillis = 1000;
+		int endMillis = 4000;
 		runProfiler("HashMap put", timeable, startN, endMillis);
 	}
-	
+
 	/**
 	 * Characterize the run time of putting a key in MyHashMap
 	 */
@@ -56,14 +58,14 @@ public class ProfileMapPut {
 				}
 			}
 		};
-		int startN = 1000;
-		int endMillis = 5000;
+		int startN = 800;
+		int endMillis = 2000;
 		runProfiler("MyHashMap put", timeable, startN, endMillis);
 	}
-	
+
 	/**
 	 * Runs the profiles and displays results.
-	 * 
+	 *
 	 * @param timeable
 	 * @param startN
 	 * @param endMillis
